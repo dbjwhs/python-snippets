@@ -49,6 +49,32 @@ python examples/custom_chain_example.py
 pytest
 ```
 
+#### [Fail-Fast Pattern](design-patterns/behavioral/fail-fast/)
+A Python implementation of the Fail-Fast pattern, ported from C++. Uses modern Python with type hints and proper error handling. Demonstrates immediate error detection through state validation and early exception raising. Includes a banking system implementation with comprehensive validation.
+
+##### Setup and Usage
+```bash
+cd design-patterns/behavioral/fail-fast
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m fail_fast
+
+# Run the banking example
+python examples/banking_example.py
+
+# Run tests
+pytest
+
+# Run type checking 
+mypy src
+
+# Run linting
+ruff check src tests examples
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
