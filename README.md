@@ -3,10 +3,36 @@ A mono repo to contain my personal snippets for Python, with most my endeavor to
 
 ## Design Patterns
 
-### [Chain of Responsibility](design-patterns/behavioral/chain-of-responsibility/)
+### Behavioral Patterns
+
+#### [Command Pattern](design-patterns/behavioral/command/)
+A Python implementation of the Command design pattern, ported from C++. Turns requests into stand-alone objects that contain all information about the request. Includes document editing system and smart home automation examples with undo/redo functionality.
+
+##### Setup and Usage
+```bash
+cd design-patterns/behavioral/command/command_pattern
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m command_pattern
+
+# Run specific examples
+python -m command_pattern.examples.document_example
+python -m command_pattern.examples.smart_home_example
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+```
+
+#### [Chain of Responsibility](design-patterns/behavioral/chain-of-responsibility/)
 A Python implementation of the Chain of Responsibility design pattern, ported from C++. Uses modern Python features like type hints, dataclasses, and abstract base classes. Includes an expense approval system example and a document workflow example.
 
-#### Setup and Usage
+##### Setup and Usage
 ```bash
 cd design-patterns/behavioral/chain-of-responsibility
 uv venv
