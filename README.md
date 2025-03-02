@@ -75,6 +75,35 @@ mypy src
 ruff check src tests examples
 ```
 
+#### [Interpreter Pattern](design-patterns/behavioral/interpreter/)
+A Python implementation of the Interpreter pattern, ported from C++. Defines a grammar for a language and provides an interpreter to deal with this grammar. Includes a mathematical expression evaluator and a business rule engine example.
+
+##### Setup and Usage
+```bash
+cd design-patterns/behavioral/interpreter
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m interpreter_pattern
+
+# Run the calculator example
+python examples/calculator_example.py
+
+# Run the rule engine example
+python examples/rule_engine_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy src
+
+# Run linting
+ruff check src tests examples
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
