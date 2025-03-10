@@ -104,6 +104,35 @@ mypy src
 ruff check src tests examples
 ```
 
+## Concurrency Patterns
+
+### [Readers-Writers](concurrency/reader-writer/)
+A Python implementation of the Readers-Writers concurrency pattern, ported from C++. Provides a thread-safe way for multiple readers and writers to access a shared resource, with writer preference to prevent writer starvation. Includes thread-safe logging and RAII-style context management.
+
+#### Setup and Usage
+```bash
+cd concurrency/reader-writer
+uv venv
+. .venv/bin/activate
+uv pip install -e .
+
+# Run the main example
+python -m reader_writer
+
+# Run specific examples
+python run_basic_example.py
+python run_advanced_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy src
+
+# Run linting
+ruff check --fix .
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
