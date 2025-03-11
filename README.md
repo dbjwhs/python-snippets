@@ -106,6 +106,34 @@ ruff check src tests examples
 
 ## Concurrency Patterns
 
+### [Pipeline](concurrency/pipelining/)
+A Python implementation of the Pipeline concurrency pattern, ported from C++. Implements a thread-safe pipeline where each processing stage runs in its own thread. Data flows through stages sequentially, enabling parallel processing of different items at different stages. Includes generic stage definitions, thread-safe queues, and comprehensive examples.
+
+#### Setup and Usage
+```bash
+cd concurrency/pipelining
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m pipeline
+
+# Run specific examples using launcher scripts
+./run_pipeline.py
+./run_data_example.py
+./run_custom_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy src
+
+# Run linting
+ruff check --fix .
+```
+
 ### [Readers-Writers](concurrency/reader-writer/)
 A Python implementation of the Readers-Writers concurrency pattern, ported from C++. Provides a thread-safe way for multiple readers and writers to access a shared resource, with writer preference to prevent writer starvation. Includes thread-safe logging and RAII-style context management.
 
