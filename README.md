@@ -104,6 +104,30 @@ mypy src
 ruff check src tests examples
 ```
 
+#### [Visitor Pattern](design-patterns/behavioral/vistor/)
+A Python implementation of the Visitor pattern, ported from C++. Allows adding new operations to existing object structures without modifying them. Includes geometric shape processing with multiple visitors for calculating area, perimeter, and generating descriptions.
+
+##### Setup and Usage
+```bash
+cd design-patterns/behavioral/vistor
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m visitor_pattern
+
+# Run examples using launcher scripts
+./run_visitor.py
+./run_example.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check --fix .
+```
+
 ## Concurrency Patterns
 
 ### [Pipeline](concurrency/pipelining/)
