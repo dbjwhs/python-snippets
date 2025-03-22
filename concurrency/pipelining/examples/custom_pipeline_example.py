@@ -119,23 +119,17 @@ def main() -> None:
     filter_stage = TextFilterStage(capitalization_queue, output_queue, 15, logger)
     
     # Create and start threads for each pipeline stage
-    threads: List[threading.Thread] = []
-    
-    threads.append(threading.Thread(
-        target=cleaning_stage.run, 
+    threads: List[threading.Thread] = [threading.Thread(
+        target=cleaning_stage.run,
         name="Cleaning-Thread"
-    ))
-    
-    threads.append(threading.Thread(
-        target=capitalization_stage.run, 
+    ), threading.Thread(
+        target=capitalization_stage.run,
         name="Capitalization-Thread"
-    ))
-    
-    threads.append(threading.Thread(
-        target=filter_stage.run, 
+    ), threading.Thread(
+        target=filter_stage.run,
         name="Filter-Thread"
-    ))
-    
+    )]
+
     # Start all processing threads
     for thread in threads:
         thread.start()
