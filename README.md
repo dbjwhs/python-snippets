@@ -128,6 +128,32 @@ pytest
 ruff check --fix .
 ```
 
+#### [Strategy Pattern](design-patterns/behavioral/strategy/)
+A Python implementation of the Strategy pattern, ported from C++. Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Includes payment processing examples with multiple payment strategies like credit card, PayPal, and cryptocurrency.
+
+##### Setup and Usage
+```bash
+cd design-patterns/behavioral/strategy
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m strategy_pattern
+
+# Run the interactive payment example
+python examples/payment_example.py
+
+# Or use the launcher script
+./run_strategy_demo.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+```
+
 ## Concurrency Patterns
 
 ### [Pipeline](concurrency/pipelining/)
