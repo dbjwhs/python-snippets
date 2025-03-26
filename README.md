@@ -211,6 +211,33 @@ mypy src
 ruff check --fix .
 ```
 
+### [Producer-Consumer](concurrency/producer-consumer/)
+A Python implementation of the Producer-Consumer concurrency pattern, ported from C++. Provides a thread-safe queue with multiple producers and consumers, with condition variables for efficient thread coordination. Includes generic type support, bounded queue with backpressure, and comprehensive thread management.
+
+#### Setup and Usage
+```bash
+cd concurrency/producer-consumer
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m producer_consumer
+
+# Run specific examples using launcher scripts
+./run_producer_consumer.py
+./run_custom_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy src
+
+# Run linting
+ruff check --fix .
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
