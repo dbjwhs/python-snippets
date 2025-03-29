@@ -238,6 +238,60 @@ mypy src
 ruff check --fix .
 ```
 
+### [Thread Pool](concurrency/thread-pool/)
+A Python implementation of the Thread Pool concurrency pattern, ported from C++. Manages a collection of worker threads that can execute tasks asynchronously, providing an efficient way to parallelize work across multiple threads. Includes Future-based result handling, exception propagation, and clean shutdown mechanism.
+
+#### Setup and Usage
+```bash
+cd concurrency/thread-pool
+uv venv
+. .venv/bin/activate
+uv pip install -e .
+
+# Run the main example
+python -m thread_pool
+
+# Run specific examples using launcher scripts
+./run_thread_pool.py
+./examples/basic_usage.py
+./examples/advanced_usage.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+```
+
+### [Barrier Pattern](concurrency/barrier-example/)
+A Python implementation of the Barrier concurrency pattern, ported from C++. Provides a synchronization mechanism to ensure multiple threads wait for each other to reach a specific point before proceeding further. Includes both a custom implementation using locks and condition variables, and a modern implementation using Python's threading.Barrier.
+
+#### Setup and Usage
+```bash
+cd concurrency/barrier-example
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m barrier_example
+
+# Run specific examples using launcher scripts
+./barrier_example_run.py
+./examples/custom_example.py
+./examples/modern_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy .
+
+# Run linting
+ruff check .
+ruff format .
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
