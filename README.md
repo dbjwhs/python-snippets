@@ -342,3 +342,32 @@ pytest
 # Run linting
 ruff check .
 ```
+
+## Utilities
+
+### [High Resolution Timer](utilities/timer/timer_py/)
+A Python implementation of a high-resolution timer, ported from C++. Provides accurate timing measurements with nanosecond precision using `time.perf_counter_ns`. Supports multiple time unit outputs and automatic formatting.
+
+#### Setup and Usage
+```bash
+cd utilities/timer/timer_py
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m timer_py
+
+# Run the example scripts
+./run_example.py
+./run_advanced_example.py
+
+# Run the timer demo
+./run_timer.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+```
