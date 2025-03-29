@@ -133,8 +133,6 @@ class ThreadPool:
     def _worker_thread(self) -> None:
         """Worker thread function that processes tasks from the queue."""
         while True:
-            task: Callable[[], None] | None = None
-            
             with self._condition:
                 # Wait for tasks or stop signal
                 while not self._stop and self._tasks.empty():
@@ -217,13 +215,13 @@ def main() -> None:
         for i in range(thread_count * 2):
             # Enqueue task that logs thread id and returns square of input
             future = pool.enqueue(
-                lambda i=i: (
+                lambda captured_i=i: (
                     logger.log(
                         LogLevel.INFO, 
-                        f"Task {i} running on thread {thread_id_to_string()}"
+                        f"Task {captured_i} running on thread {thread_id_to_string()}"
                     ),
                     time.sleep(1),  # Do some work
-                    i * i
+                    captured_i * captured_i
                 )[-1]  # Return the last item from the tuple (i * i)
             )
             results.append(future)
