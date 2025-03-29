@@ -292,6 +292,38 @@ ruff check .
 ruff format .
 ```
 
+## Programming Paradigms
+
+### [Negative Space Programming](programming-paradigms/negative-space/)
+A Python implementation of the Negative Space programming paradigm, ported from C++. Demonstrates designing software by focusing on what cannot happen rather than what can. Includes a SafeString class with constraint-based validation and a generic NegativeSpaceContainer that uses functional constraints.
+
+#### Setup and Usage
+```bash
+cd programming-paradigms/negative-space
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m negative_space
+
+# Run the advanced example
+python -m negative_space.examples.advanced_example
+
+# Or use the launcher scripts
+./run_negative_space.py
+./run_advanced_example.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check --fix .
+
+# Run type checking
+mypy .
+```
+
 ## Data Structures
 
 ### [Binary Tree](data-structures/binary-tree/)
