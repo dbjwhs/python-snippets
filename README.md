@@ -371,3 +371,32 @@ pytest
 # Run linting
 ruff check .
 ```
+
+## Odds and Ends
+
+### [Python Object Copying Pitfalls](odds-and-ends/slicing/)
+A Python example demonstrating common pitfalls related to object copying, inheritance, and serialization. While Python doesn't have the same slicing issues as C++, it has similar problems that can lead to unexpected behavior. Includes demonstrations of improper inheritance, shallow vs. deep copying, and serialization type issues.
+
+#### Setup and Usage
+```bash
+cd odds-and-ends/slicing
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m slicing
+
+# Run specific examples using launcher scripts
+./run_slicing.py
+./run_advanced_example.py
+
+# Run tests
+pytest
+
+# Run type checking
+mypy src
+
+# Run linting
+ruff check .
+```
