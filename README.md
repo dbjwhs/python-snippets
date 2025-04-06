@@ -3,6 +3,37 @@ A mono repo to contain my personal snippets for Python, with most my endeavor to
 
 ## Design Patterns
 
+### Structural Patterns
+
+#### [Adapter Pattern](design-patterns/structural/adapter/adapter_pattern/)
+A Python implementation of the Adapter design pattern, ported from C++. Allows objects with incompatible interfaces to collaborate by wrapping one object to provide a compatible interface to another. Includes file system adapters that standardize operations across different file systems (APFS, FAT32) and a power adapter example.
+
+##### Setup and Usage
+```bash
+cd design-patterns/structural/adapter
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m adapter_pattern
+
+# Run specific examples
+python -m adapter_pattern.examples.file_system_example
+python -m adapter_pattern.examples.basic_adapter_example
+
+# Or use the launcher scripts
+./run_adapter_demo.py
+./run_file_system_example.py
+./run_basic_example.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check --fix .
+```
+
 ### Behavioral Patterns
 
 #### [Command Pattern](design-patterns/behavioral/command/)
