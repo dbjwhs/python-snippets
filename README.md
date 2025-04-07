@@ -8,7 +8,10 @@ A mono repo to contain my personal snippets for Python, with most my endeavor to
 #### [Adapter Pattern](design-patterns/structural/adapter/adapter_pattern/)
 A Python implementation of the Adapter design pattern, ported from C++. Allows objects with incompatible interfaces to collaborate by wrapping one object to provide a compatible interface to another. Includes file system adapters that standardize operations across different file systems (APFS, FAT32) and a power adapter example.
 
-##### Setup and Usage
+#### [Proxy Pattern](design-patterns/structural/proxy/proxy_pattern/)
+A Python implementation of the Proxy design pattern, ported from C++. Provides a surrogate or placeholder for another object to control access to it. This implementation demonstrates a protection proxy with authentication and logging capabilities, commonly used in enterprise systems where access control and audit trails are crucial.
+
+##### Setup and Usage (Adapter)
 ```bash
 cd design-patterns/structural/adapter
 uv venv
@@ -26,6 +29,28 @@ python -m adapter_pattern.examples.basic_adapter_example
 ./run_adapter_demo.py
 ./run_file_system_example.py
 ./run_basic_example.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check --fix .
+```
+
+##### Setup and Usage (Proxy)
+```bash
+cd design-patterns/structural/proxy
+uv venv
+. .venv/bin/activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m proxy_pattern
+
+# Run specific examples using launcher scripts
+./run_proxy_demo.py
+./run_vector_example.py
+./run_file_example.py
 
 # Run tests
 pytest
