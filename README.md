@@ -1,6 +1,35 @@
 # python-snippets
 A mono repo to contain my personal snippets for Python, with most my endeavor to port my C++ snippets to Python.
 
+## Algorithms
+
+### [QuickSort](algorithms/quick-sort/)
+A Python implementation of the QuickSort algorithm, ported from C++. Features the Lomuto partition scheme, depth control for recursion safety, and tail recursion optimization. Includes comprehensive testing for various edge cases and a detailed explanation of the algorithm's history and mechanics.
+
+#### Setup and Usage
+```bash
+cd algorithms/quick-sort
+uv venv
+. .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m quicksort
+
+# Run examples using launcher scripts
+./run_quicksort.py
+./run_examples.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+
+# Run type checking
+mypy src/quicksort
+```
+
 ## Design Patterns
 
 ### Structural Patterns

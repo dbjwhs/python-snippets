@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "quicksort"
+version = "0.1.0"
+authors = [
+    {name = "dbjwhs", email = "dbjwhs@example.com"},
+]
+description = "Modern implementation of QuickSort algorithm"
+readme = "README.md"
+requires-python = ">=3.12"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "icecream>=2.1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "ruff>=0.1.5",
+    "mypy>=1.5.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/quicksort"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+select = ["E", "F", "I", "N", "W", "B", "A", "COM", "C4", "UP", "PT", "RET", "SIM", "ARG", "PTH"]
+ignore = []
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"test_*.py" = ["PT"]
+
+[tool.ruff.isort]
+known-first-party = ["quicksort"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["src/quicksort/tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
