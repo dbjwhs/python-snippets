@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "abstract_factory"
+version = "0.1.0"
+description = "Abstract Factory Design Pattern implementation in Python"
+readme = "README.md"
+requires-python = ">=3.12"
+license = {text = "MIT"}
+authors = [
+  {name = "dbjwhs", email = "example@example.com"}
+]
+dependencies = [
+  "icecream>=2.1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=7.4.0",
+  "pytest-cov>=4.1.0",
+  "mypy>=1.5.1",
+  "ruff>=0.1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/abstract_factory"]
+
+[tool.pytest.ini_options]
+testpaths = ["src/abstract_factory/tests"]
+python_files = "test_*.py"
+pythonpath = ["src"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+
+[[tool.mypy.overrides]]
+module = "pytest.*"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "icecream"
+ignore_missing_imports = true
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+select = ["E", "F", "B", "I", "N", "UP", "ANN", "C4", "SIM", "ERA"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+"**/tests/**" = ["ANN201"]
+
+[tool.ruff.isort]
+known-first-party = ["abstract_factory"]

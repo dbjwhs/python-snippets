@@ -32,6 +32,35 @@ mypy src/quicksort
 
 ## Design Patterns
 
+### Creational Patterns
+
+#### [Abstract Factory Pattern](design-patterns/creational/abstract-factory/)
+A Python implementation of the Abstract Factory design pattern, ported from C++. Provides an interface for creating families of related objects without specifying their concrete classes. This implementation demonstrates UI component theming with light and dark variants, ensuring consistent visual presentation across an application.
+
+##### Setup and Usage
+```bash
+cd design-patterns/creational/abstract-factory
+uv venv
+. .venv/bin/activate  # On Windows: .venv\Scripts\activate
+uv pip install -e ".[dev]"
+
+# Run the main example
+python -m abstract_factory
+
+# Run examples using launcher scripts
+./run_abstract_factory.py
+./run_example.py
+
+# Run tests
+pytest
+
+# Run linting
+ruff check .
+
+# Run type checking
+mypy src
+```
+
 ### Structural Patterns
 
 #### [Adapter Pattern](design-patterns/structural/adapter/adapter_pattern/)
