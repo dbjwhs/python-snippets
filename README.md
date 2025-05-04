@@ -182,7 +182,7 @@ python examples/banking_example.py
 # Run tests
 pytest
 
-# Run type checking 
+# Run type checking
 mypy src
 
 # Run linting
@@ -459,7 +459,7 @@ ruff check .
 
 ## Utilities
 
-### [High Resolution Timer](utilities/timer/timer_py/)
+### [High Resolution Timer](utilities/timer/)
 A Python implementation of a high-resolution timer, ported from C++. Provides accurate timing measurements with nanosecond precision using `time.perf_counter_ns`. Supports multiple time unit outputs and automatic formatting.
 
 #### Setup and Usage
